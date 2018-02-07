@@ -1,0 +1,39 @@
+{
+  "name": "parse-package",
+  "version": "0.0.0",
+  "description": "Parse package.json file and return intelligent object - node module",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "jasmine"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/anusaini/parse-package.git"
+  },
+  "keywords": [
+    "parse",
+    "package",
+    "parse package json"
+  ],
+  "author": "Blunt <anusaini@paypal.com>",
+  "license": "MIt",
+  "bugs": {
+    "url": "https://github.com/anusaini/parse-package/issues"
+  },
+  "homepage": "https://github.com/anusaini/parse-package#readme",
+  "dependencies": {
+    "flattenvalues": "^1.0.0",
+    "node-path-choice": "^2.0.0",
+    "truekeys": "^2.0.0"
+  },
+  "devDependencies": {
+    "chai": "^4.1.2",
+    "eslint": "^4.17.0",
+    "eslint-config-standard": "^11.0.0-beta.0",
+    "eslint-plugin-import": "^2.8.0",
+    "eslint-plugin-node": "^6.0.0",
+    "eslint-plugin-promise": "^3.6.0",
+    "eslint-plugin-standard": "^3.0.1",
+    "jasmine": "^3.0.0"
+  }
+}
