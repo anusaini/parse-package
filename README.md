@@ -154,6 +154,15 @@ Parse package.json file and return intelligent object - node module
 
 ```
 
+### callback enabled
+
+`parsePackage` also supports callback mechanism.
+
+- Either pass a single callback,
+- Or an array of callback functions
+
+Look into tests and read code for more information.
+
 ## License
 
 MIT 2018

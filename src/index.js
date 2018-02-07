@@ -4,7 +4,13 @@ const { truekeys } = require('truekeys')
 const flattenkeys = require('flattenkeys')
 const flattenvalues = require('flattenvalues')
 
-function parsePackage(filename) {
+/**
+ *
+ * @param {string} filename - input filename: './package.json' by default
+ * @param {function|[function]} whenDone - callback or array of callbacks to be called after processing and before returning
+ */
+function parsePackage(filename, whenDone) {
+    filename = filename || './package.json'
     const out = {
         filename: filename,
         parsed: {},
@@ -37,6 +43,12 @@ function parsePackage(filename) {
         }
     } else {
         out.errors.push(`File ${filename} doesn't exists.`)
+    }
+    if (whenDone) {
+        // convert whenDone to array
+        whenDone = Array.isArray(whenDone) ? whenDone : [ whenDone ]
+        // callback each with out value
+        whenDone.forEach(fn => fn(out))
     }
     return out
 }

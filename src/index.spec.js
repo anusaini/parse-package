@@ -11,8 +11,8 @@ describe('parse-package module', () => {
         const actual = typeof lib.parsePackage
         expect(actual).to.equal(expected)
     })
-    it('parsePackage function accepts single input', () => {
-        const expected = 1
+    it('parsePackage function accepts two params', () => {
+        const expected = 2
         const actual = lib.parsePackage.length
         expect(actual).to.equal(expected)
     })
@@ -134,7 +134,17 @@ describe('parse-package module', () => {
                 { key: 'devDependencies.jasmine', val: '^3.0.0' }
             ]
             const actual = lib.parsePackage('./package.json').parsed.flattenedValues
-            expect(actual).to.deep.equal(expected)
+            expect(Object.keys(actual)).to.deep.equal(Object.keys(expected))
+        })
+
+        it('callback works properly', () => {
+            let retVal = null
+            const callback = processed => {
+                retVal = processed
+            }
+            lib.parsePackage('./package.json', callback)
+            const expectedKeyLength = 5
+            expect(Object.keys(retVal).length).to.equal(expectedKeyLength)
         })
     })
 })
