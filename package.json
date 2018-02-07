@@ -1,6 +1,6 @@
 {
   "name": "parse-package",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "Parse package.json file and return intelligent object - node module",
   "main": "src/index.js",
   "scripts": {
@@ -22,6 +22,7 @@
   },
   "homepage": "https://github.com/anusaini/parse-package#readme",
   "dependencies": {
+    "flattenkeys": "^1.0.0",
     "flattenvalues": "^1.0.0",
     "node-path-choice": "^2.0.0",
     "truekeys": "^2.0.0"
