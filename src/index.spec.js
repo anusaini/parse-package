@@ -98,5 +98,43 @@ describe('parse-package module', () => {
             const actual = lib.parsePackage('./package.json').parsed.flattenedKeys
             expect(actual).to.deep.equal(expected)
         })
+
+        it('successfully flattens values', () => {
+            const expected = [
+                { key: 'name', val: 'parse-package' },
+                { key: 'version', val: '1.0.0' },
+                { key: 'description',
+                    val: 'Parse package.json file and return intelligent object - node module' },
+                { key: 'main', val: 'src/index.js' },
+                { key: 'scripts.test', val: 'jasmine' },
+                { key: 'repository.type', val: 'git' },
+                { key: 'repository.url',
+                    val: 'git+https://github.com/anusaini/parse-package.git' },
+                { key: 'keywords.0', val: 'parse' },
+                { key: 'keywords.1', val: 'package' },
+                { key: 'keywords.2', val: 'parse package json' },
+                { key: 'author', val: 'Blunt <anusaini@paypal.com>' },
+                { key: 'license', val: 'MIt' },
+                { key: 'bugs.url',
+                    val: 'https://github.com/anusaini/parse-package/issues' },
+                { key: 'homepage',
+                    val: 'https://github.com/anusaini/parse-package#readme' },
+                { key: 'dependencies.flattenkeys', val: '^1.0.0' },
+                { key: 'dependencies.flattenvalues', val: '^1.0.0' },
+                { key: 'dependencies.node-path-choice', val: '^2.0.0' },
+                { key: 'dependencies.truekeys', val: '^2.0.0' },
+                { key: 'devDependencies.chai', val: '^4.1.2' },
+                { key: 'devDependencies.eslint', val: '^4.17.0' },
+                { key: 'devDependencies.eslint-config-standard',
+                    val: '^11.0.0-beta.0' },
+                { key: 'devDependencies.eslint-plugin-import', val: '^2.8.0' },
+                { key: 'devDependencies.eslint-plugin-node', val: '^6.0.0' },
+                { key: 'devDependencies.eslint-plugin-promise', val: '^3.6.0' },
+                { key: 'devDependencies.eslint-plugin-standard', val: '^3.0.1' },
+                { key: 'devDependencies.jasmine', val: '^3.0.0' }
+            ]
+            const actual = lib.parsePackage('./package.json').parsed.flattenedValues
+            expect(actual).to.deep.equal(expected)
+        })
     })
 })
