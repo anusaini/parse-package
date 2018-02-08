@@ -1,6 +1,6 @@
 {
   "name": "parse-package",
-  "version": "3.0.0",
+  "version": "3.0.1",
   "description": "Parse package.json file and return intelligent object - node module",
   "main": "src/index.js",
   "scripts": {

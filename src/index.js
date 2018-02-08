@@ -42,7 +42,7 @@ function parsePackage(filename, whenDone) {
             return out.contains(keys) ? keys.map(k => { return { key: k, val: out.parsed.data[k] } }) : []
         }
     } else {
-        out.errors.push(`File ${filename} doesn't exists.`)
+        out.errors.push(`File ${filename} doesn't exist.`)
     }
     if (whenDone) {
         // convert whenDone to array
